@@ -1,7 +1,7 @@
 {
   "name": "gouminator",
   "version": "1.0.0",
-  "description": "Generateur de goumin",
+  "description": "Generateur de Goumin pour AKIL Technologies",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
