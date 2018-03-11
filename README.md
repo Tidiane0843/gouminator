@@ -24,7 +24,7 @@ npm install
 You can now run the gouminator on our dev web server on port 3000 by running
 
 ```bash
-./node_modules/httt./node_modules/http-server/bin/http-server -p 3000
+./node_modules/http-server/bin/http-server -p 3000
 ```
 
 # 1. Prototype
@@ -36,14 +36,18 @@ The application should feature:
 * A submit button
 * An output field that displays the computed volume
 
+Use pure/vanilla Javascript and HTML.
+
 # 2. Prototype Enhancement
 
 Now that the app works and we can see the volume, we want to enhance the application. Add the following features:
 
 * Validate that a number is provided for the radius
 * Validate that the radius number value is less than 100
-* Cache answers so that if the same radius value is entered by the user, the answer is returned from a cache instead of calculating it
+* Cache answers so that if the same radius value is entered by the user, the answer is returned from a cache instead of calculating it. Use a programmatic cache, not localStorage or SessionStorage.
 * Make the application look a little better by adding some CSS
+
+Use pure/vanilla Javascript and HTML.
 
 # 3. Static MVP
 
@@ -51,16 +55,16 @@ We've added some validation, visual and performance improvements to our applicat
 Now we want to turn it into an SPA.
 
 * Pick a framework to upgrade your app to (AngularJS/ Angular/React/VueJS)
-* Create a new folder called `frontend` at the root of the `gouminator` folder and proceeed to set up your framework and proceed to the upgrade of the application to the new framework
+* Create a new folder called `frontend` at the root of the `gouminator` folder and proceeed to set up your framework and upgrade of the application to use your selected framework.
 
 # 4. Dynamic MVP
 
-Now that our Gouminator we want to remove the business logic here for the Gouminator from the UI and delegate it to backend service.
+Now that our Gouminator is setup, we want to remove the business logic here from the UI and delegate it to backend service.
 We'll be using a service oriented architecture using a RESTful api as a complement to our SPA.
 
 * Create a new folder called `backend` at the root of the gouminator project and set up a backend of your choice (Custom/Symfony/Laravel/ExpressJS)
 * your API should run on `http://localhost:4001`
-* Create a new route `/volume` that takes a `radius` parameter and returns a volume in the following format
+* Create a new route `/volume` that takes a `radius` parameter and returns a volume in the following JSON format:
 
 ```
 {
@@ -71,11 +75,11 @@ We'll be using a service oriented architecture using a RESTful api as a compleme
 
 * Connect your API to your front end application and verify it works
 
-# 5. VP (View Pere) Level (XXL Bonus Points)
+# 5. VP (Vieux Pere) Level (XXL Bonus Points)
 
 This is for extra bonus points and can be turned in later on.
 
-* Create a new route `/volumes` which takes a list of radius values and returns the list of volumes for each of the values in the input in the following format:
+* Create a new route `/volumes` which takes a list of radius values and returns the list of volumes for each of the values in the input in the following JSON format:
 
 ```
 [
