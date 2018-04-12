@@ -42,9 +42,9 @@ Use pure/vanilla Javascript and HTML.
 
 Now that the app works and we can see the volume, we want to enhance the application. Add the following features:
 
-* Validate that a number is provided for the radius
-* Validate that the radius number value is less than 100
-* Cache answers so that if the same radius value is entered by the user, the answer is returned from a cache instead of calculating it. Use a programmatic cache, not localStorage or SessionStorage.
+* Validate that a *number* value is provided for the radius. For example, if the user enters a word or a letter, it should show an error.
+* Validate that the radius number value is *less than 100*
+* Cache answers so that if the same radius value is entered by the user, the answer is returned from a cache instead of calculating it. Use a programmatic (code) cache, not localStorage or SessionStorage.
 * Make the application look a little better by adding some CSS
 
 Use pure/vanilla Javascript and HTML.
