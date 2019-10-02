@@ -10,7 +10,6 @@ V=4/3 * π * r3
 # Dependencies:
 
 * [NodeJS](https://nodejs.org/en/)
-*expressjs
 * [npm](https://nodejs.org/en/)
 * [http-server](https://github.com/indexzero/http-server)
 
