@@ -45,3 +45,7 @@ form button {
 form button:hover {
     background-color: rgba(233, 30, 98, 0.876);
 }
+
+#result {
+    font-weight: bold;
+}

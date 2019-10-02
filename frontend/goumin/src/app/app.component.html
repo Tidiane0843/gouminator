@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>The Gouminator</title>
+    <style>
+        body {
+            padding-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>The Gouminator </h1>
+        <h2>Generateur de Goumin @ AKIL TECHNOLOGIES</h2>
+        
+        
+        <div id="main">
+            <form [formGroup]="goumForm" (ngSubmit)="onSubmit()">
+                <span>Input a number and get the value of your goumin.</span>
+                <input (input)="displayResp=false" formControlName="radius" type="text" id="radius" name="radius" placeholder="Radius">   
+                <div *ngIf="!goumForm.get('radius').valid && goumForm.get('radius').touched">
+                    <span *ngIf="goumForm.get('radius').errors['required']"><i>This field is required</i></span> <br>
+                    <span *ngIf="goumForm.get('radius').errors['valueNotNumber']"><i>Only numbers are allowed</i></span>
+                    <span *ngIf="goumForm.get('radius').errors['max']"><i>Radius must be less than {{ goumForm.get('radius').errors['max']['max'] }}</i></span>
+                    
+                </div>
+                <button [disabled]="!goumForm.valid" type="submit">Calculate</button>     
+            </form>
+            <p *ngIf="displayResp" id="result">
+              Le volume est : {{ volume | formatGoumin }}
+            </p>
+        </div>
+    </main>
+</body>
+
+</html>
