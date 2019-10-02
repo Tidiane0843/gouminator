@@ -23,25 +23,82 @@
 
     <div id="main">
         <form>
-            <input type="text" id="radius" placeholder="Radius">   
+            <input type="text" id="radius" onfocusout="validate_input(event)" placeholder="Radius">   
             <button id="send" type="button" onclick="myFunction()">Calculate</button>     
         </form>
+        <p id="result"></p>
     </div>
 
     <script>
+
+    let myCache = [];
+
     function myFunction(e) {
         let r = document.getElementById("radius").value;
-        let volume = calcVolume(r);
+        let volume;
 
+        // first check in cache
+        let cache = check_in_cache(r);
+        if (cache === undefined) {
+            volume = calcVolume(r);
+        }
+        else {
+            console.log("find in cache");
+            volume = cache.volume;
+        }
+        
         //update view
-        var node = document.createElement("P");
-        var textnode = document.createTextNode("Le volume est : " + volume);
-        node.appendChild(textnode);
-        document.getElementById("main").appendChild(node);
+        update_view(volume);
+        
+        //save in cache
+        save_in_cache(r,volume);
+    }
+
+    function save_in_cache(r,vol) {
+        let item = {};
+        item.rayon = r;
+        item.volume = vol;
+        myCache.push(item);
+    }
+
+    function check_in_cache(r) {
+        let found = myCache.find(
+            (el) => {
+                return el.rayon == r;
+            }
+        );
+        return found;
     }
 
     function calcVolume(r) {
         return 4/3 * Math.PI * Math.pow(r,3);
+    }
+
+    function validate_input(rayon) {
+        const RADIUS_NUMB = 100;
+        let r = rayon.target.value;
+        
+        let reg=/[^0-9]/;
+
+        if (reg.test(r)) {
+            // Contient des caractères non numériques
+            alert("Entrez uniquement des chiffres svp");
+            document.getElementById("radius").value = "";
+        }
+
+        else {
+            // radius number less than 100
+            r = parseInt(r);
+            if (r >= 100) {
+                alert("Radius number must be less than " + RADIUS_NUMB);
+                document.getElementById("radius").value = "";
+            }
+        }
+    }
+
+    function update_view(volume) {
+        let txt = "Le volume est : " + volume;
+        document.getElementById("result").innerHTML = txt;
     }
     </script>
 </body>
