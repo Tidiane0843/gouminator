@@ -4,30 +4,29 @@
 <head>
     <meta charset="utf-8">
     <title>The Gouminator</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             padding-top: 30px;
-        }
-        
-        label,
-        input {
-            display: block;
         }
     </style>
 </head>
 
 <body>
-    <h1>The Gouminator </h1>
-    <h2>Generateur de Goumin @ AKIL TECHNOLOGIES</h2>
-    <p>Input a number and get the value of your goumin.</p>
-
-    <div id="main">
-        <form>
-            <input type="text" id="radius" onfocusout="validate_input(event)" placeholder="Radius">   
-            <button id="send" type="button" onclick="myFunction()">Calculate</button>     
-        </form>
-        <p id="result"></p>
-    </div>
+    <main>
+        <h1>The Gouminator </h1>
+        <h2>Generateur de Goumin @ AKIL TECHNOLOGIES</h2>
+        
+        
+        <div id="main">
+            <form>
+                <span>Input a number and get the value of your goumin.</span>
+                <input type="text" id="radius" onfocusout="validate_input(event)" placeholder="Radius">   
+                <button id="send" type="button" onclick="myFunction()">Calculate</button>     
+            </form>
+            <p id="result"></p>
+        </div>
+    </main>
 
     <script>
 
