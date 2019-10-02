@@ -21,6 +21,29 @@
     <h2>Generateur de Goumin @ AKIL TECHNOLOGIES</h2>
     <p>Input a number and get the value of your goumin.</p>
 
+    <div id="main">
+        <form>
+            <input type="text" id="radius" placeholder="Radius">   
+            <button id="send" type="button" onclick="myFunction()">Calculate</button>     
+        </form>
+    </div>
+
+    <script>
+    function myFunction(e) {
+        let r = document.getElementById("radius").value;
+        let volume = calcVolume(r);
+
+        //update view
+        var node = document.createElement("P");
+        var textnode = document.createTextNode("Le volume est : " + volume);
+        node.appendChild(textnode);
+        document.getElementById("main").appendChild(node);
+    }
+
+    function calcVolume(r) {
+        return 4/3 * Math.PI * Math.pow(r,3);
+    }
+    </script>
 </body>
 
 </html>
