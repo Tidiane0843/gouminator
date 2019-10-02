@@ -10,13 +10,14 @@ V=4/3 * π * r3
 # Dependencies:
 
 * [NodeJS](https://nodejs.org/en/)
+*expressjs
 * [npm](https://nodejs.org/en/)
 * [http-server](https://github.com/indexzero/http-server)
 
 # Installation
 
 ```bash
-git clone https://github.com/akiltech/gouminator
+git clone https://github.com/Tidiane0843/gouminator.git
 cd gouminator
 npm install
 ```
